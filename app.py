@@ -17,8 +17,8 @@ st.set_page_config(
 # Load data
 @st.cache_data
 def load_movie_data():
-    with gzip.open("similarity.pkl.gz", "rb") as f:
-        similarity = pickle.load(f)
+    similarity_data = pickle.load(open('similarity.pkl', 'rb'))
+    similarity = pd.DataFrame(similarity_data)
     movies_dict = pickle.load(open('movies.pkl', 'rb'))
     movies = pd.DataFrame(movies_dict)
     return similarity, movies
