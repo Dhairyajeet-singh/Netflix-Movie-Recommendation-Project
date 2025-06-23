@@ -4,7 +4,6 @@ import pandas as pd
 import requests
 from dotenv import load_dotenv
 import os
-import gzip
 
 # Page configuration
 st.set_page_config(
